@@ -1,0 +1,231 @@
+/* Estilos gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #E3D4FA;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+/* Círculo no fundo */
+.container::before {
+    content: '';
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background-color: #4E2765;
+    top: -100px;
+    left: -300px;
+    z-index: 0;
+}
+
+/* Novo círculo menor */
+.container::after {
+    content: '';
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background-color: #4E2765;
+    bottom: 10px;
+    right: 250px;
+    border-radius: 50%;
+    z-index: 0;
+}
+
+/* Caixa de login */
+.login-box {
+    background-color: white;
+    padding: 40px 20px;
+    height: 70%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+/* Título e subtítulo */
+.login-box h2 {
+    font-size: 26px;
+    margin-bottom: 5px;
+    color: #4E2765;
+    font-weight: bold;
+}
+
+.login-box p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+/* Grupos de input organizados com espaçamento */
+.input-group {
+    width: 100%;
+    max-width: 350px;
+    margin-bottom: 20px;
+    position: relative;
+    margin-top: 30px;
+}
+
+/* Label acima do input */
+.input-group label {
+    display: block;
+    text-align: left;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #4E2765;
+}
+
+/* Input sem bordas e com ícone dentro */
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    padding-right: 40px;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    background-color: transparent;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+/* Altera a cor da linha ao focar no input */
+.input-group input:focus {
+    border-bottom: 2px solid #4E2765;
+    outline: none;
+}
+
+/* Ícones dentro dos inputs */
+.icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #4E2765;
+}
+
+/* Esqueceu a senha */
+.forgot-password {
+    font-size: 12px;
+    color: #4E2765;
+    text-decoration: none;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    display: block;
+}
+
+/* Botão com largura maior e interação */
+button {
+    width: 100%;
+    max-width: 380px;
+    background-color: #4E2765;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #3c2052;
+}
+
+/* Responsividade para tablets */
+@media (max-width: 768px) {
+    .container::before {
+        width: 300px;
+        height: 300px;
+        top: -80px;
+        left: -200px;
+    }
+
+    .container::after {
+        width: 150px;
+        height: 150px;
+        bottom: 20px;
+        right: 200px;
+    }
+
+    .login-box {
+        width: 320px;
+        padding: 30px 20px;
+    }
+
+    .login-box h2 {
+        font-size: 24px;
+    }
+
+    .login-box p {
+        font-size: 13px;
+    }
+}
+
+/* Responsividade para celulares */
+@media (max-width: 480px) {
+    .container::before {
+        width: 200px;
+        height: 200px;
+        top: -50px;
+        left: -100px;
+    }
+
+    .container::after {
+        width: 100px;
+        height: 100px;
+        bottom: 10px;
+        right: 100px;
+    }
+
+    .login-box {
+        width: 90%;
+        padding: 20px 15px;
+    }
+
+    .login-box h2 {
+        font-size: 20px;
+    }
+
+    .login-box p {
+        font-size: 12px;
+    }
+
+    .input-group input {
+        font-size: 14px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
+
+.msg {
+    color: red;
+}

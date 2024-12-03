@@ -1,0 +1,417 @@
+/* Resetar margens e paddings de todos os elementos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Garantir que o body ocupe a altura total da página e impedir rolagem lateral */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #EAE7F7;
+    color: #333;
+    overflow-x: hidden; /* Impede rolagem horizontal */
+}
+
+/* Layout principal da página */
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+/* O conteúdo principal vai ocupar o espaço disponível */
+main {
+    flex: 1;
+}
+
+/* Estilos do header e nav */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #FFFFFF;
+    width: 100%;
+    max-width: 100vw; /* Garante que o header não ultrapasse a largura da tela */
+}
+
+header .logo h1 {
+    font-size: 24px;
+}
+
+header .search-bar {
+    display: flex;
+    align-items: center;
+}
+
+header .search-bar input {
+    padding: 10px; /* Espaçamento interno */
+    border: none; /* Remove a borda */
+    border-bottom: 2px solid #CCC; /* Adiciona uma linha embaixo */
+    outline: none; /* Remove o contorno ao focar no campo */
+    width: 200px; /* Ajuste a largura conforme necessário */
+}
+
+header .search-bar input:focus {
+    border-bottom: 2px solid #007bff; /* Cor da linha embaixo ao focar */
+}
+
+.search-bar button {
+    background-color: transparent; /* Fundo transparente */
+    border: none; /* Remove borda */
+    cursor: pointer; /* Muda o cursor ao passar por cima */
+}
+
+.search-bar button i {
+    font-size: 24px; /* Tamanho do ícone */
+    color: #000; /* Cor do ícone */
+    transition: color 0.3s; /* Transição suave para mudança de cor */
+}
+
+.search-bar button:hover i {
+    color: #007bff; /* Cor ao passar o mouse */
+}
+
+.header-icons i {
+    font-size: 24px; /* Ajuste o tamanho do ícone conforme necessário */
+    margin-left: 15px; /* Espaçamento entre os ícones */
+    color: #000; /* Altere a cor se desejar */
+    cursor: pointer; /* Muda o cursor ao passar por cima */
+    transition: color 0.3s; /* Adiciona uma transição suave na cor */
+}
+
+.header-icons i:hover {
+    color: #007bff; /* Cor ao passar o mouse */
+}
+
+nav {
+    background-color: #4A144C;
+    padding: 10px 20px;
+    width: 100%;
+    max-width: 100vw; /* Garante que o nav não ultrapasse a largura da tela */
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+}
+
+nav ul li {
+    color: #FFFFFF;
+    font-size: 14px;
+}
+
+/* Estilos da seção de resultados */
+.search-results {
+    padding: 40px;
+    background-color: #EAE7F7;
+    max-width: 100vw; /* Garante que a seção de resultados não ultrapasse a largura da tela */
+}
+
+.search-results h2 {
+    font-size: 24px;
+    color: #4A144C;
+}
+
+.search-results p {
+    margin: 20px 0;
+}
+
+/* Grid de produtos */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Duas colunas */
+    gap: 20px; /* Espaçamento entre os itens */
+    margin-top: 20px;
+    width: 800px;
+    height: 600px;
+}
+
+/* Cartões de produto */
+.product-card {
+    text-align: center;
+    background-color: #FFFFFF;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+
+
+/* Estilo das imagens nos cartões */
+.product-card img {
+    width: 50%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+/* Estilo do texto dentro dos cartões */
+.product-card p {
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+.product-card p strong {
+    color: #4A144C;
+    font-size: 18px;
+}
+
+/* Texto promocional (ex: 10x sem juros) */
+.product-card .discount {
+    font-size: 12px;
+    color: #28a745;
+}
+
+/* Banner de promoção no topo */
+.promotion-banner {
+    text-align: center;
+    background-color: #4A144C;
+    color: #FFFFFF;
+    padding: 40px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    max-width: 900px;
+}
+
+.promo-card, .product-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.2s;
+}
+
+.promo-card:hover, .product-card:hover {
+    transform: scale(1.05);
+}
+
+.promo-card {
+    grid-column: span 2;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+}
+
+.promo-card h1 {
+    font-size: 24px;
+    color: #333;
+    margin: 10px 0;
+}
+
+.promo-card h2 {
+    font-size: 48px;
+    color: #ff4384;
+    margin: 0;
+}
+
+.promo-card p {
+    font-size: 18px;
+    color: #666;
+}
+
+.promo-card .link {
+    display: inline-block;
+    color: #3c5cff;
+    font-weight: bold;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.product-card .product-info {
+    padding: 15px;
+}
+
+.product-card .product-title {
+    font-size: 16px;
+    color: #333;
+    margin: 0 0 10px;
+}
+
+.product-card .price {
+    font-size: 18px;
+    color: #28a745;
+    font-weight: bold;
+}
+
+.product-card .tag {
+    background-color: #28a745;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 5px;
+    margin-top: 5px;
+    display: inline-block;
+}
+
+.product-card img {
+    width: 100%; /* Largura total do card */
+    height: 200px; /* Altura fixa para todas as imagens */
+    object-fit: cover; /* Garante que a imagem se ajuste bem no espaço */
+    display: block;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+
+.promotion-banner h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.highlighted-categories {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.category-card {
+    text-align: center;
+    width: 150px;
+}
+
+.category-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.category-card p {
+    margin-top: 10px;
+    color: #FFFFFF;
+    font-size: 14px;
+}
+
+/* Promoção principal */
+.promotion-main {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 40px;
+    background-color: #EAE7F7; /* Cor de fundo do container */
+}
+
+.promo-content {
+    background-color: transparent; /* Fundo transparente */
+    border-radius: 0; /* Remove o arredondamento */
+    box-shadow: none; /* Remove a sombra */
+    text-align: center;
+    padding: 0; /* Remove o preenchimento */
+    margin: 0; /* Remove as margens */
+}
+
+.promo-content img {
+    height: 550px; /* Mantém a altura da imagem */
+    width: 300px; /* Mantém a largura da imagem */
+    margin-top: 270px;
+}
+
+/* Estilo do texto do banner */
+.promo-text h3 {
+    font-size: 22px;
+    color: #4A144C;
+    margin-bottom: 10px;
+}
+
+.promo-text p {
+    font-size: 18px;
+    color: #000;
+    margin: 10px 0;
+}
+
+.promo-text strong {
+    font-size: 26px;
+    color: #007bff;
+}
+
+.promo-text a {
+    font-size: 14px;
+    color: #007bff;
+    text-decoration: none;
+    margin-top: 20px;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+}
+
+/* Estilo para os ícones de pagamento */
+.payment-icon {
+    font-size: 36px; /* Ajuste o tamanho conforme necessário */
+    margin-right: 15px; /* Espaçamento entre os ícones */
+    color: #FFFFFF; /* Você pode mudar a cor se quiser */
+}
+
+/* Footer sticky */
+/* Footer */
+footer {
+    background-color: #4A144C;
+    color: #FFFFFF;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: space-around;
+    position: relative; /* Mantém o footer na posição correta */
+    width: 100%;
+    max-width: 100vw; /* Garante que o footer não ultrapasse a largura da tela */
+    text-align: left;
+    margin-top: 20px; /* Espaço acima do footer */
+}
+
+/* Adicione isso para o main */
+main {
+    flex: 1;
+    padding-bottom: 10px; /* Espaço suficiente para não sobrepor o footer */
+    
+}
+
+/* Estilos de outras partes do footer */
+footer h3 {
+    margin-bottom: 20px;
+}
+
+footer ul {
+    list-style: none;
+}
+
+footer ul li {
+    margin-bottom: 10px;
+}
+
+footer img {
+    margin-top: 20px;
+}
+
+.social-icons {
+    margin-top: 20px;
+}
+
+.social-icons a {
+    color: #FFFFFF;
+    font-size: 24px;
+    margin-right: 15px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #CCC; /* Cor quando o usuário passa o mouse por cima */
+}
+
+li{
+    cursor: pointer;
+}
